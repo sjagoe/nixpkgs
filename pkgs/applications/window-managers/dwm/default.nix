@@ -1,4 +1,4 @@
-{stdenv, fetchurl, libX11, libXinerama, patches ? []}:
+{stdenv, fetchurl, libX11, libXinerama, libXft, patches ? []}:
 
 let
   name = "dwm-6.0";
@@ -11,7 +11,7 @@ stdenv.mkDerivation {
     sha256 = "0mpbivy9j80l1jqq4bd4g4z8s5c54fxrjj44avmfwncjwqylifdj";
   };
  
-  buildInputs = [ libX11 libXinerama ];
+  buildInputs = [ libX11 libXinerama libXft ];
  
   prePatch = ''sed -i "s@/usr/local@$out@" config.mk'';
 
