@@ -4241,7 +4241,7 @@ let
       url = "https://pypi.python.org/packages/source/g/gevent/${name}.tar.gz";
       sha256 = "0hyzfb0gcx9pm5c2igan8y57hqy2wixrwvdjwsaivxsqs0ay49s6";
     };
- 
+
     patches = [ ../development/python-modules/gevent_sslwrap.patch ];
 
     buildInputs = with self; [ pkgs.libev ];
@@ -4461,8 +4461,6 @@ let
       platforms   = platforms.all;
     };
   };
-
-  grin = callPackage ../development/python-modules/grin { };
 
   gyp = buildPythonPackage rec {
     rev = "1977";
@@ -12146,6 +12144,8 @@ let
       license = stdenv.lib.licenses.asl20;
     };
   };
+
+  grin = callPackage ../development/python-modules/grin { };
 
   gsutil = buildPythonPackage rec {
     name = "gsutil-4.6";
